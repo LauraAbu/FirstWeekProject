@@ -9,17 +9,36 @@ namespace FirstWeekProject.Controllers
 {
     public class ContactController : Controller
     {
+        private readonly object model;
+
         // GET: Contact
+        [Route("")]
+        [Route("Contacts")]
+        [Route("Controler/{Id}")]
+
         public ActionResult Index()
         {
+            var contacts = Contacts.GetAll();
+
+            return View(contacts);
+
+        }
+
+
+        // GET: Contact/Details/5
+        [Route("Controler/contact/{Id}")]
+        public ActionResult Details(int id)
+        {
+
             return View();
         }
 
-        // GET: Contact/Details/5
-        public ActionResult Details(int id)
+
+        private ActionResult View(object name, int id)
         {
-            return View();
+            throw new NotImplementedException();
         }
+
 
         // GET: Contact/Create
         public ActionResult Create()
@@ -29,17 +48,21 @@ namespace FirstWeekProject.Controllers
 
         // POST: Contact/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Contact contact)
         {
             try
             {
-                var model = new Contact();
-                model.Name = collection["Name"];
-                model.LastName = collection["LastName"];
-                model.EmailAddress = collection["EmailAddress"];
-                model.Phone = collection["Phone"];
+                if (ModelState.IsValid)
+                {
+                    Contacts.Add(contact);
 
-                Contacts.Add(model);
+                }
+                var model = new Contact();
+                //model.Name = collection["Name"];
+                //model.LastName = collection["LastName"];
+                //model.EmailAddress = collection["EmailAddress"];
+                //model.Phone = collection["Phone"];
+
 
                 return RedirectToAction("Index", "Home");
             }

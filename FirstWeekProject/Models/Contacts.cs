@@ -7,7 +7,7 @@ namespace FirstWeekProject.Models
 {
     public class Contacts
     {
-        static List<Contact> contactList = new List<Contact>();
+        private static List<Contact> contactList = new List<Contact>();
         static Contacts()
         {
             var contact1 = new Contact();
@@ -44,14 +44,27 @@ namespace FirstWeekProject.Models
         public static List<Contact> GetAll()
         {
 
-            
-
             return contactList;
         }
 
         internal static void Add(Contact model)
         {
             contactList.Add(model);
+        }
+        public static Contact GetById(int id)
+        {
+            int _id = id;
+
+            if (_id >= contactList.Count)
+            {
+                _id = contactList.Count - 1;
+            }
+            else if (_id < 0)
+            {
+                _id = 0;
+            }
+
+            return contactList[id];
         }
     }
 }
