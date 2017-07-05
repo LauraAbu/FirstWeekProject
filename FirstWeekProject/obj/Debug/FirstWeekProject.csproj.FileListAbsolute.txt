@@ -71,3 +71,6 @@ c:\users\abukalau\documents\visual studio 2017\Projects\FirstWeekProject\FirstWe
 c:\users\abukalau\documents\visual studio 2017\Projects\FirstWeekProject\FirstWeekProject\obj\Debug\FirstWeekProject.csprojResolveAssemblyReference.cache
 c:\users\abukalau\documents\visual studio 2017\Projects\FirstWeekProject\FirstWeekProject\obj\Debug\FirstWeekProject.dll
 c:\users\abukalau\documents\visual studio 2017\Projects\FirstWeekProject\FirstWeekProject\obj\Debug\FirstWeekProject.pdb
+c:\users\abukalau\documents\visual studio 2017\Projects\FirstWeekProject\FirstWeekProject\bin\FirstWeekProject.Data.dll
+c:\users\abukalau\documents\visual studio 2017\Projects\FirstWeekProject\FirstWeekProject\bin\FirstWeekProject.Data.pdb
+c:\users\abukalau\documents\visual studio 2017\Projects\FirstWeekProject\FirstWeekProject\bin\FirstWeekProject.Data.dll.config

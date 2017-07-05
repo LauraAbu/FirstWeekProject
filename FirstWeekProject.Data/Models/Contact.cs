@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
 
-namespace FirstWeekProject.Models
+
+namespace FirstWeekProject.Data.Models
 {
     public class Contact
     {

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using FirstWeekProject.Data.Models;
 
-namespace FirstWeekProject.Models
+
+
+namespace FirstWeekProject.Data.Repository
 {
     public class Contacts
     {
@@ -47,7 +49,7 @@ namespace FirstWeekProject.Models
             return contactList;
         }
 
-        internal static void Add(Contact model)
+        public static void Add(Contact model)
         {
             contactList.Add(model);
         }

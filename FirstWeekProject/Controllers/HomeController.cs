@@ -1,4 +1,5 @@
-﻿using FirstWeekProject.Models;
+﻿using FirstWeekProject.Data.Models;
+using FirstWeekProject.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
