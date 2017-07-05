@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FirstWeekProject.Data.Models
 {
     public class Contact
     {
+        public int Id { get; set; }
+
         [Required]
         [StringLength(255, MinimumLength = 10)]
         //[RegularExpression("")]

@@ -1,20 +1,23 @@
-﻿using FirstWeekProject.Data.Models;
+﻿using FirstWeekProject.Data.Interfaces;
+using FirstWeekProject.Data.Models;
 using FirstWeekProject.Data.Repository;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace FirstWeekProject.Controllers
 {
     public class ContactController : Controller
     {
-        private readonly object model;
+        private readonly IContactRepository _contactRepository;
+
+        public ContactController()
+        {
+            _contactRepository = new ContactRepository();
+        }
 
         public ActionResult Index()
         {
-            var contacts = Contacts.GetAll();
+            var contacts = _contactRepository.GetAll();
 
             return View(contacts);
 
@@ -24,7 +27,7 @@ namespace FirstWeekProject.Controllers
        // [Route("contact/{Id}")]
         public ActionResult Details(int id)
         {
-            var contact = Contacts.GetById(id);
+            var contact = _contactRepository.GetById(id);
 
             return View(contact);
         }
@@ -48,7 +51,7 @@ namespace FirstWeekProject.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Contacts.Add(contact);
+                    _contactRepository.Create(contact);
 
                 }
                 var model = new Contact();

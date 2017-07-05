@@ -1,19 +1,21 @@
-﻿using FirstWeekProject.Data.Models;
+﻿using FirstWeekProject.Data.Interfaces;
 using FirstWeekProject.Data.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace FirstWeekProject.Controllers
 {
-
     public class HomeController : Controller
     {
+        private readonly IContactRepository _contactRepository;
+
+        public HomeController()
+        {
+            _contactRepository = new ContactRepository();
+        }
+
         public ActionResult Index()
         {
-            var contacts = Contacts.GetAll();
+            var contacts = _contactRepository.GetAll();
                     
             return View(contacts);
 
