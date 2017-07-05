@@ -11,11 +11,6 @@ namespace FirstWeekProject.Controllers
     {
         private readonly object model;
 
-        // GET: Contact
-        [Route("")]
-        [Route("Contacts")]
-        [Route("Controler/{Id}")]
-
         public ActionResult Index()
         {
             var contacts = Contacts.GetAll();
@@ -23,23 +18,21 @@ namespace FirstWeekProject.Controllers
             return View(contacts);
 
         }
-
-
+        
         // GET: Contact/Details/5
-        [Route("Controler/contact/{Id}")]
+       // [Route("contact/{Id}")]
         public ActionResult Details(int id)
         {
+            var contact = Contacts.GetById(id);
 
-            return View();
+            return View(contact);
         }
-
-
+        
         private ActionResult View(object name, int id)
         {
             throw new NotImplementedException();
         }
-
-
+        
         // GET: Contact/Create
         public ActionResult Create()
         {

@@ -17,9 +17,11 @@
               <th>Last Name</th>
               <th>Email</th>
               <th>Phone</th>
+              <th>Actions</th>
           </tr>
       </thead>
       <tbody>
+          @{ var index = 0;}
           @foreach (var contact in Model)
           {
               <tr>
@@ -27,7 +29,8 @@
                   <td>@contact.LastName</td>
                   <td>@contact.EmailAddress</td>
                   <td>@contact.Phone</td>
-
+                  <td> <a href="Contact/Details/@index"> View </a> </td>
+                  @{index ++;}
               </tr>
           }
       </tbody>
