@@ -1,7 +1,7 @@
 ﻿@model FirstWeekProject.Data.Models.Contact
 
 <form action="/Contact/Create" method="post">
-    
+
     <div class="form-horizontal">
         <h4>Contact</h4>
         <hr />
@@ -9,7 +9,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Name">Name</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="Name" name="Name" type="text" required value="" />
+                <input class="form-control text-box single-line" id="Name" name="Name" type="text" placeholder="Enter name here" required value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -17,7 +17,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="LastName">LastName</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="LastName" name="LastName" type="text" required value="" />
+                <input class="form-control text-box single-line" id="LastName" name="LastName" type="text" placeholder="Enter last name here" required value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="EmailAddress">EmailAddress</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="EmailAddress" name="EmailAddress" type="text" required value="" />
+                <input class="form-control text-box single-line" id="EmailAddress" name="EmailAddress" type="email" placeholder="Enter email address here" required value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="EmailAddress" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Phone">Phone</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="Phone" name="Phone" type="text" required value="" />
+                <input class="form-control text-box single-line" id="Phone" name="Phone" type="tel" pattern="[+]370\d{8}|86\d{7}" placeholder="Enter phone number here" required value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -45,5 +45,4 @@
 
     </div>
 
-    </form>
-
+</form>

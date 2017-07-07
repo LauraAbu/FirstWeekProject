@@ -12,6 +12,7 @@ namespace FirstWeekProject.Data.Models
         public string Name { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
+        // pasirasyti kad rasytu su +3706  pattern="[+]370\d{8}|86\d{7}"  
         public string Phone { get; set; }
     }
 }
