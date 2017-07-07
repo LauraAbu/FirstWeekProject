@@ -22,21 +22,21 @@ namespace FirstWeekProject.Controllers
             return View(contacts);
 
         }
-        
+
         // GET: Contact/Details/5
-       // [Route("contact/{Id}")]
+        // [Route("contact/{Id}")]
         public ActionResult Details(int id)
         {
             var contact = _contactRepository.GetById(id);
 
             return View(contact);
         }
-        
+
         private ActionResult View(object name, int id)
         {
             throw new NotImplementedException();
         }
-        
+
         // GET: Contact/Create
         public ActionResult Create()
         {
@@ -49,17 +49,10 @@ namespace FirstWeekProject.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    _contactRepository.Create(contact);
+                if (!ModelState.IsValid)
+                    return View();
 
-                }
-                var model = new Contact();
-                //model.Name = collection["Name"];
-                //model.LastName = collection["LastName"];
-                //model.EmailAddress = collection["EmailAddress"];
-                //model.Phone = collection["Phone"];
-
+                _contactRepository.Create(contact);
 
                 return RedirectToAction("Index", "Home");
             }

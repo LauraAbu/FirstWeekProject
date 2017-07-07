@@ -7,7 +7,7 @@ namespace FirstWeekProject.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(255, MinimumLength = 10)]
+        [StringLength(255, MinimumLength = 5)]
         //[RegularExpression("")]
         public string Name { get; set; }
         public string LastName { get; set; }

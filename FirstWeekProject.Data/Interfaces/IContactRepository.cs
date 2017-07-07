@@ -8,5 +8,7 @@ namespace FirstWeekProject.Data.Interfaces
         IEnumerable<Contact> GetAll();
         Contact GetById(int id);
         Contact Create(Contact model);
+        void Update(int id, Contact model);
+        void Delete(int id);
     }
 }

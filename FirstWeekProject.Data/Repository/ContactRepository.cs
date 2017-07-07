@@ -1,6 +1,7 @@
 ﻿using FirstWeekProject.Data.Interfaces;
 using FirstWeekProject.Data.Models;
 using System.Collections.Generic;
+using System;
 
 namespace FirstWeekProject.Data.Repository
 {
@@ -27,7 +28,24 @@ namespace FirstWeekProject.Data.Repository
 
         public Contact GetById(int id)
         {
+            if (!_contacts.ContainsKey(id))
+            {
+                return (null);
+            }
+
             return _contacts[id];
+
+        }
+
+        public void Update(int id, Contact model)
+        {
+            model.Id = id;
+            _contacts.Remove(id);
+            _contacts.Add(id, model);
+        }
+        public void Delete (int id)
+        {
+            _contacts.Remove(id);
         }
     }
 }
