@@ -1,9 +1,22 @@
-﻿var app = angular.module("ContactApp", []);
+﻿var app = angular.module("ContactApp", ["ngRoute"]);
 
-app.controller("ContactListController", function($http){
-    var self = this;
-    $http.get("/api/contacts").then(function (response) {
-        self.contacts = response.data;
-
+app.config(function ($routeProvider, $locationProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: "Static/ContactEdit.html",
+                controller: "ContactEditController"
+            })
+            .when("/contacts", {
+                templateUrl: "Static/ContactList.html",
+                controller: "ContactListController"
+            })
+            .when("/contacts/:id", {
+                templateUrl: "Static/ContactEdit.html",
+                controller:"ContactEditController"
+            })
+            .when("/blue", {
+                templateUrl: "blue.html"
+        });
+        $locationProvider.html5Mode(true);
     });
-});
+

@@ -23,6 +23,14 @@ namespace FirstWeekProject
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                      "~/Scripts/angular.js",
+                      "~/bower_components/angular-route/angular-route.js",
+                      "~/Scripts/app.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular-controllers").Include(
+                      "~/Controllers/*.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

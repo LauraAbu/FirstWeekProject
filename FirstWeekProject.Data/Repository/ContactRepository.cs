@@ -7,7 +7,7 @@ namespace FirstWeekProject.Data.Repository
 {
     public class ContactRepository : IContactRepository
     {
-        private static int _currentId = 0;
+        private static int _currentId = 1;
         private static Dictionary<int, Contact> _contacts = new Dictionary<int, Contact>();
 
         public IEnumerable<Contact> GetAll()

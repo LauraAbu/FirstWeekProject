@@ -23,7 +23,12 @@ namespace FirstWeekProject.Controllers.Api
 
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
+      
         {
+            if (id== 0)
+            {
+                return Ok(new Contact());
+            }
             var contact = _contactRepository.GetById(id);
 
             if (null == contact)
