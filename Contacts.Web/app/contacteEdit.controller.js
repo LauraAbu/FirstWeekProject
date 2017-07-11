@@ -2,7 +2,7 @@
     $scope.contact = {
 
     };
-    var baseURI = "localhost:50079";
+    var baseURI = "http://localhost:50079";
 
     $scope.init = function () {
 

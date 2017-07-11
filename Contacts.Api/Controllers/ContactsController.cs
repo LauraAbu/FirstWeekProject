@@ -6,10 +6,9 @@ using System.Web.Http.Cors;
 
 namespace Contacts.Api.Controllers
 {
-
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ContactsController : ApiController
     {
+
         private readonly IContactRepository _contactRepository;
 
         public ContactsController()

@@ -1,6 +1,6 @@
 ﻿app.controller("ContactListController", function ($scope, $http, $location) {
     $scope.contacts = [];
-    var baseURI = "localhost:50079";
+    var baseURI = "http://localhost:50079";
 
     $http.get(baseURI + "/api/contacts").then(function (response) {
         $scope.contacts = response.data;
