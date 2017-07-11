@@ -1,6 +1,6 @@
-﻿using FirstWeekProject.Data.Interfaces;
-using FirstWeekProject.Data.Models;
-using FirstWeekProject.Data.Repository;
+﻿using Contacts.Data.Interfaces;
+using Contacts.Data.Models;
+using Contacts.Data.Repository;
 using System.Web.Http;
 
 namespace Contacts.Api

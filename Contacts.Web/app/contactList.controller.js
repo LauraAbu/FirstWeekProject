@@ -1,14 +1,15 @@
 ﻿app.controller("ContactListController", function ($scope, $http, $location) {
     $scope.contacts = [];
+    var baseURI = "localhost:50079";
 
-    $http.get("/api/contacts").then(function (response) {
+    $http.get(baseURI + "/api/contacts").then(function (response) {
         $scope.contacts = response.data;
     });
     
     $scope.onDelete = function (data, index) {
 
 
-        $http.delete("/api/contacts/" + data.Id).then(function (response) {
+        $http.delete(baseURI + "/api/contacts/" + data.Id).then(function (response) {
             $scope.contacts.splice(index, 1);
 
 

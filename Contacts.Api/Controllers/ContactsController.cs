@@ -1,11 +1,13 @@
-﻿using FirstWeekProject.Data.Interfaces;
-using FirstWeekProject.Data.Models;
-using FirstWeekProject.Data.Repository;
+﻿using Contacts.Data.Interfaces;
+using Contacts.Data.Models;
+using Contacts.Data.Repository;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Contacts.Api.Controllers
 {
 
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ContactsController : ApiController
     {
         private readonly IContactRepository _contactRepository;

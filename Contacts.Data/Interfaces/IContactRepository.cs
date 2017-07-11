@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using FirstWeekProject.Data.Models;
+using Contacts.Data.Models;
 
-namespace FirstWeekProject.Data.Interfaces
+namespace Contacts.Data.Interfaces
 {
     public interface IContactRepository
     {

@@ -3,20 +3,21 @@
 app.config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "templates/list.html",
+                templateUrl: "app/templates/edit.html",
                 controller: "ContactEditController"
             })
             .when("/contacts", {
-                templateUrl: "Static/ContactList.html",
+                templateUrl: "app/templates/list.html",
                 controller: "ContactListController"
             })
             .when("/contacts/:id", {
-                templateUrl: "Static/ContactEdit.html",
+                templateUrl: "app/templates/edit.html",
                 controller:"ContactEditController"
             })
             .when("/blue", {
                 templateUrl: "blue.html"
-        });
+            });
+
+        //$rootScope.url = "http://localhost:50079/";
         $locationProvider.html5Mode(true);
     });
-

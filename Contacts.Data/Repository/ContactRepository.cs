@@ -1,9 +1,8 @@
-﻿using FirstWeekProject.Data.Interfaces;
-using FirstWeekProject.Data.Models;
+﻿using Contacts.Data.Interfaces;
+using Contacts.Data.Models;
 using System.Collections.Generic;
-using System;
 
-namespace FirstWeekProject.Data.Repository
+namespace Contacts.Data.Repository
 {
     public class ContactRepository : IContactRepository
     {
