@@ -2,6 +2,8 @@
     $scope.contacts = [];
     var baseURI = "http://localhost:50079";
 
+    $scope.searchPattern = "";
+
     $http.get(baseURI + "/api/contacts").then(function (response) {
         $scope.contacts = response.data;
     });
