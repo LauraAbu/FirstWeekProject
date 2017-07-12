@@ -1,5 +1,5 @@
-﻿using Contacts.Data.Interfaces;
-using Contacts.Data.Models;
+﻿using Contacts.Data;
+using Contacts.Data.Interfaces;
 using Contacts.Data.Repository;
 using System.Web.Http;
 
@@ -11,7 +11,7 @@ namespace Contacts.Api
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            CreateData();
+           // CreateData();
         }
 
         private void CreateData()

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Contacts.Data.Models;
 
 namespace Contacts.Data.Interfaces
 {
@@ -10,5 +9,6 @@ namespace Contacts.Data.Interfaces
         Contact Create(Contact model);
         void Update(int id, Contact model);
         void Delete(int id);
+     
     }
 }

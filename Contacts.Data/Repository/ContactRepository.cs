@@ -1,50 +1,65 @@
 ﻿using Contacts.Data.Interfaces;
-using Contacts.Data.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Contacts.Data.Repository
 {
     public class ContactRepository : IContactRepository
     {
-        private static int _currentId = 1;
-        private static Dictionary<int, Contact> _contacts = new Dictionary<int, Contact>();
+        ContactsAppDbEntities _context;
+
+        public ContactRepository()
+        {
+            _context = new ContactsAppDbEntities();
+        }
+
+
 
         public IEnumerable<Contact> GetAll()
         {
-            return _contacts.Values;
+            return _context.Contacts.ToList();
         }
 
         public Contact Create(Contact model)
         {
-            model.Id = _currentId;
 
-            _contacts.Add(_currentId, model);
 
-            _currentId++;
+            _context.Contacts.Add(model);
+            _context.SaveChanges();
 
             return model;
         }
 
         public Contact GetById(int id)
         {
-            if (!_contacts.ContainsKey(id))
-            {
-                return (null);
-            }
+            var contact=_context.Contacts.FirstOrDefault(x=>x.Id==id);
 
-            return _contacts[id];
+            return contact;
 
         }
 
         public void Update(int id, Contact model)
         {
-            model.Id = id;
-            _contacts.Remove(id);
-            _contacts.Add(id, model);
+            var dbcontact = _context.Contacts.FirstOrDefault(x => x.Id == id);
+
+            dbcontact.EmailAddress = model.EmailAddress;
+            dbcontact.LastName = model.LastName;
+            dbcontact.Name = model.Name;
+            dbcontact.Phone = model.Phone;
+
+
+            _context.SaveChanges();
+
         }
         public void Delete (int id)
         {
-            _contacts.Remove(id);
+            var contact = _context.Contacts.FirstOrDefault(x => x.Id == id);
+
+            _context.Contacts.Remove(contact);
+            _context.SaveChanges();
         }
+
     }
 }

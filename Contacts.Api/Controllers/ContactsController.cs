@@ -1,8 +1,7 @@
-﻿using Contacts.Data.Interfaces;
-using Contacts.Data.Models;
+﻿using Contacts.Data;
+using Contacts.Data.Interfaces;
 using Contacts.Data.Repository;
 using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace Contacts.Api.Controllers
 {
