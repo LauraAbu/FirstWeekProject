@@ -120,6 +120,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactAppDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Repository\ContactMappingConfiguration.cs" />
     <Compile Include="Message.cs">
       <DependentUpon>ContactAppDb.tt</DependentUpon>

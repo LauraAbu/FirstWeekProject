@@ -3,16 +3,24 @@
 app.config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "app/templates/edit.html",
+                templateUrl: "app/templates/contactEdit.html",
                 controller: "ContactEditController"
             })
             .when("/contacts", {
-                templateUrl: "app/templates/list.html",
+                templateUrl: "app/templates/contactList.html",
                 controller: "ContactListController"
             })
             .when("/contacts/:id", {
-                templateUrl: "app/templates/edit.html",
+                templateUrl: "app/templates/contactEdit.html",
                 controller:"ContactEditController"
+            })
+            .when("/messages", {
+                templateUrl: "app/templates/messageList.html",
+                controller: "MessageListController"
+            })
+            .when("/messages/:id", {
+                templateUrl: "app/templates/messageEdit.html",
+                controller: "MessageEditController"
             })
             .when("/blue", {
                 templateUrl: "blue.html"

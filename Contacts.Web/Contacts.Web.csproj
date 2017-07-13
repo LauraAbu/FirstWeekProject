@@ -66,8 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\messageEdit.controller.js" />
     <Content Include="app\contacteEdit.controller.js" />
+    <Content Include="app\messageList.controller.js" />
     <Content Include="app\contactList.controller.js" />
+    <Content Include="app\templates\messageEdit.html" />
+    <Content Include="app\templates\messageList.html" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -78,8 +82,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\templates\edit.html" />
-    <Content Include="app\templates\list.html" />
+    <Content Include="app\templates\contactEdit.html" />
+    <Content Include="app\templates\contactList.html" />
     <Content Include="styles\site.css" />
     <Content Include="Web.config" />
   </ItemGroup>

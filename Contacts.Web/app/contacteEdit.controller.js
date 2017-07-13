@@ -4,7 +4,6 @@
     };
     var baseURI = "http://localhost:50079";
 
-    $scope.init = function () {
 
         if ($routeParams.id === undefined) {
             $routeParams.id = 0;
@@ -13,7 +12,6 @@
             $scope.contact = response.data;
 
         });
-    };
     $scope.onSave = function () {
 
         if ($scope.contact.Id > 0) {
