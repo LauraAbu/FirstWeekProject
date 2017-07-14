@@ -19,7 +19,8 @@ namespace Contacts.Data.Repository
 
         public IEnumerable<Contact> GetAll()
         {
-            return _context.Contacts.ToList();
+            var contacts = _context.Contacts.ToList();
+            return contacts;
         }
 
         public Contact Create(Contact model)

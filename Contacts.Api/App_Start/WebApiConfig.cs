@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using Newtonsoft.Json;
+using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace Contacts.Api
@@ -11,6 +12,7 @@ namespace Contacts.Api
             // Web API routes
             var cors = new EnableCorsAttribute("*", "*", "*");
 
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.Re‌​ferenceLoopHandling = ReferenceLoopHandling.Ignore;
             config.EnableCors(cors);
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

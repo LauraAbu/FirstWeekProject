@@ -19,7 +19,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="ContactId" Type="int" Nullable="false" />
           <Property Name="IsSent" Type="bit" Nullable="false" />

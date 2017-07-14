@@ -2,17 +2,19 @@
 using Contacts.Data.Interfaces;
 using Contacts.Data.Repository;
 using System.Web.Http;
-using System;
+using System.Linq;
+using System.Web.Http.Cors;
 
 namespace Contacts.Api.Controllers
 {
-    public class MessageController : ApiController
+    [EnableCors("*", "*", "*", exposedHeaders: "X-Custom-Header")]
+    public class MessagesController : ApiController
     {
 
         private readonly IMessageRepository _messageRepository;
         
 
-        public MessageController()
+        public MessagesController()
         {
             _messageRepository = new MessageRepository();
         }
@@ -20,7 +22,7 @@ namespace Contacts.Api.Controllers
         // GET api/<controller>
         public IHttpActionResult Get()
         {
-            return Ok(_messageRepository.GetAll());
+            return Ok(_messageRepository.GetAll().ToList());
         }
 
         // GET api/<controller>/5

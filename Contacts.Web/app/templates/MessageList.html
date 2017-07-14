@@ -11,14 +11,27 @@
 
     
     <table class="table table-hover">
-    
+    <thead>
+        <th>
+           Text
+        </th>
+        <th>
+            Receiver 
+        </th>
+        <th>
+            Send
+        </th>
+    </thead>
     <tbody>
         <tr ng-repeat="x in messages | filter : searchPattern">
-            <td>{{x.Message}}</td>
-            <td>{{x.ContactId}}</td>
-            <td>{{x.IsSent}}</td>
+            <td>{{x.Message1}}</td>
+            <td>{{x.Contact.Name}} {{x.Contact.LastName}}</td>
+            <td>{{x.IsSent?'Yes':'No'}}</td>
             
-            <td><a class="btn btn-success" href="\messages\{{x.Id}}">Edit</a>&nbsp;<a ng-click="onDelete(x, $index)"class="btn btn-default" class="pointer">Delete</a></td>
+            <td>
+           
+            <a ng-click="onDelete(x, $index)" class="btn btn-default pointer">Delete</a>&nbsp;
+          
         </tr>
     </tbody>
     </table>

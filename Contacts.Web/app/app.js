@@ -27,5 +27,5 @@ app.config(function ($routeProvider, $locationProvider) {
             });
 
         //$rootScope.url = "http://localhost:50079/";
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(false);
     });

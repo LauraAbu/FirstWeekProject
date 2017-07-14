@@ -17,7 +17,8 @@ namespace Contacts.Data.Repository
 
         public IEnumerable<Message> GetAll()
         {
-            return _context.Messages.ToList();
+            var messages =_context.Messages.ToList();
+            return messages;
         }
 
         public Message Create(Message model)

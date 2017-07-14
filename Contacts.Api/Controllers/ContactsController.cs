@@ -2,9 +2,11 @@
 using Contacts.Data.Interfaces;
 using Contacts.Data.Repository;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Contacts.Api.Controllers
 {
+    [EnableCors("*","*","*", exposedHeaders: "X-Custom-Header")]
     public class ContactsController : ApiController
     {
 
@@ -18,7 +20,15 @@ namespace Contacts.Api.Controllers
         // GET api/<controller>
         public IHttpActionResult Get()
         {
-            return Ok(_contactRepository.GetAll());
+            try
+            {
+                return Ok(_contactRepository.GetAll());
+            }
+            catch (System.Exception ex)
+            {
+                var a = ex.Message;
+            }
+            return BadRequest();
         }
 
         // GET api/<controller>/5
