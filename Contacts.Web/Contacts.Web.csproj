@@ -70,6 +70,7 @@
     <Content Include="app\contacteEdit.controller.js" />
     <Content Include="app\messageList.controller.js" />
     <Content Include="app\contactList.controller.js" />
+    <Content Include="app\templates\FacebookLogin.html" />
     <Content Include="app\templates\messageEdit.html" />
     <Content Include="app\templates\messageList.html" />
     <Content Include="index.html" />
