@@ -1,38 +1,38 @@
 ﻿<div class="row">
-    
-        <form class="navbar-form" role="search">
-            <div class="input-group add-on">
-                <input class="form-control" placeholder="Search" name="srch-term" ng-model="searchPattern" id="srch-term" type="text">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-            </div>
-        </form>
 
-    
+    <form class="navbar-form" role="search">
+        <div class="input-group add-on">
+            <input class="form-control" placeholder="Search" name="srch-term" ng-model="searchPattern" id="srch-term" type="text">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+
     <table class="table table-hover">
-    <thead>
+        <thead>
         <th>
-           Text
+            Text
         </th>
         <th>
-            Receiver 
+            Receiver
         </th>
         <th>
             Send
         </th>
-    </thead>
-    <tbody>
-        <tr ng-repeat="x in messages | filter : searchPattern">
-            <td>{{x.Message1}}</td>
-            <td>{{x.Contact.Name}} {{x.Contact.LastName}}</td>
-            <td>{{x.IsSent?'Yes':'No'}}</td>
-            
-            <td>
-           
-            <a ng-click="onDelete(x, $index)" class="btn btn-default pointer">Delete</a>&nbsp;
-          
-        </tr>
-    </tbody>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in messages | filter : searchPattern">
+                <td width="250px">{{x.Message1}}</td>
+                <td>{{x.Contact.Name}} {{x.Contact.LastName}}</td>
+                <td>{{x.IsSent?'Yes':'No'}}</td>
+
+                <td>
+
+                    <a ng-click="onDelete(x, $index)" class="btn btn-default pointer">Delete</a>&nbsp;
+
+            </tr>
+        </tbody>
     </table>
 </div>  
