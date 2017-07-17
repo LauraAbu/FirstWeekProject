@@ -6,11 +6,11 @@ using System.Diagnostics;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Contacts.Api.Models;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Security;
 using System.Collections.Generic;
 using Microsoft.Owin.Security.Facebook;
+using Contacts.Data;
 
 [assembly: OwinStartup(typeof(Contacts.Api.App_Start.Startup))]
 
@@ -59,11 +59,12 @@ namespace Contacts.Api.App_Start
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            app.UseFacebookAuthentication(new FacebookAuthenticationOptions() {
-               AppId= "1904161343184573",
-               AppSecret= "2ab5c0ddc1a84bd03ab5ee2d827605da",
-               Provider = new FbProvider()
-        });
+            app.UseFacebookAuthentication(new FacebookAuthenticationOptions()
+            {
+                AppId = "1904161343184573",
+                AppSecret = "2ab5c0ddc1a84bd03ab5ee2d827605da",
+                Provider = new FbProvider()
+            });
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

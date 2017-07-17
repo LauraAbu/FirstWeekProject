@@ -6,8 +6,15 @@
     <edmx:Diagrams>
       <Diagram DiagramId="92e54652d2a046beabf5ce19d2279d85" Name="Diagram1">
         <EntityTypeShape EntityType="ContactsAppDbModel.Contact" Width="1.5" PointX="1.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ContactsAppDbModel.Message" Width="2.5" PointX="4.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactsAppDbModel.Message" Width="2.5" PointX="4.625" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="ContactsAppDbModel.FK_Messages_Contacts" />
+        <EntityTypeShape EntityType="ContactsAppDbModel.AspNetRoles" Width="1.5" PointX="3.375" PointY="5.375" />
+        <EntityTypeShape EntityType="ContactsAppDbModel.AspNetUserClaims" Width="1.5" PointX="7.875" PointY="6.625" />
+        <EntityTypeShape EntityType="ContactsAppDbModel.AspNetUserLogins" Width="1.5" PointX="7.875" PointY="4" />
+        <EntityTypeShape EntityType="ContactsAppDbModel.AspNetUsers" Width="1.5" PointX="5.625" PointY="4.125" />
+        <AssociationConnector Association="ContactsAppDbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ContactsAppDbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ContactsAppDbModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

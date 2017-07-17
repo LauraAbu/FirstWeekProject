@@ -27,5 +27,9 @@ namespace Contacts.Data
     
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Message> Messages { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }
