@@ -4,7 +4,7 @@ using Contacts.Data.Repository;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace Contacts.Api.Controllers
+namespace Contacts.Api.Controller
 {
     [EnableCors("*","*","*", exposedHeaders: "X-Custom-Header")]
     public class ContactsController : ApiController
@@ -18,6 +18,8 @@ namespace Contacts.Api.Controllers
         }
 
         // GET api/<controller>
+        [HttpGet]
+       // [Route("api/contacts")]
         public IHttpActionResult Get()
         {
             try
@@ -32,6 +34,9 @@ namespace Contacts.Api.Controllers
         }
 
         // GET api/<controller>/5
+        [Authorize]
+        [HttpGet]
+        //[Route("api/contacts/{id:int}")]
         public IHttpActionResult Get(int id)
 
         {

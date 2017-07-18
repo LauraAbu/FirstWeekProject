@@ -22,8 +22,9 @@ app.config(function ($routeProvider, $locationProvider) {
                 templateUrl: "app/templates/messageEdit.html",
                 controller: "MessageEditController"
             })
-            .when("/blue", {
-                templateUrl: "blue.html"
+            .when("/login", {
+                templateUrl: "app/templates/login.html",
+                controller: "LoginController"
             });
 
         //$rootScope.url = "http://localhost:50079/";

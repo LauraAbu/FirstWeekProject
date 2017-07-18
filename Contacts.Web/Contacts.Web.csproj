@@ -68,9 +68,11 @@
     <Content Include="app\app.js" />
     <Content Include="app\messageEdit.controller.js" />
     <Content Include="app\contacteEdit.controller.js" />
+    <Content Include="app\Login.controller.js" />
     <Content Include="app\messageList.controller.js" />
     <Content Include="app\contactList.controller.js" />
-    <Content Include="app\templates\FacebookLogin.html" />
+    <Content Include="app\messagesSent.controller.js" />
+    <Content Include="app\templates\login.html" />
     <Content Include="app\templates\messageEdit.html" />
     <Content Include="app\templates\messageList.html" />
     <Content Include="index.html" />

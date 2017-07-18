@@ -13,12 +13,13 @@ namespace Contacts.Api
             var cors = new EnableCorsAttribute("*", "*", "*");
 
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.Re‌​ferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            //config.Formatters.Add(config.Formatters.XmlFormatter);
             config.EnableCors(cors);
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { id = RouteParameter.Optional, message = RouteParameter.Optional }
             );
 
         }

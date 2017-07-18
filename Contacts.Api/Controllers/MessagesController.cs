@@ -5,7 +5,7 @@ using System.Web.Http;
 using System.Linq;
 using System.Web.Http.Cors;
 
-namespace Contacts.Api.Controllers
+namespace Contacts.Api.Controller
 {
     [EnableCors("*", "*", "*", exposedHeaders: "X-Custom-Header")]
     public class MessagesController : ApiController
@@ -20,6 +20,7 @@ namespace Contacts.Api.Controllers
         }
 
         // GET api/<controller>
+        [Route("api/Messages")]
         public IHttpActionResult Get()
         {
             return Ok(_messageRepository.GetAll().ToList());
