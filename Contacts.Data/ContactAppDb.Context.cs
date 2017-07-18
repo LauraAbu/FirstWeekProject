@@ -18,6 +18,7 @@ namespace Contacts.Data
         public ContactsAppDbEntities()
             : base("name=ContactsAppDbEntities")
         {
+           
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -20,13 +20,15 @@ namespace Contacts.Api.Controller
 {
     public class AccountsController : ApiController
     {
+
         [HttpGet]
         [Route("api/login")]
         public HttpResponseMessage Login()
         {
             var properties = new AuthenticationProperties
             {
-                RedirectUri = "api/contacts"
+            //veikia tik sekmingai prisijungus prie FB
+                RedirectUri ="http://localhost:50130/#!/contacts"
             };
             Request.GetOwinContext().Authentication.Challenge(properties, "Facebook");
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.Unauthorized);

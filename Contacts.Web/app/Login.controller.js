@@ -4,14 +4,14 @@
 
     $scope.searchPattern = "";
 
-    $http.get(baseURI + "/ExternalLogins?returnUrl=%2Fcontacts").then(function (response) {
-        $scope.providers = response.data;
-    });
+    //$http.get(baseURI + "/ExternalLogins?returnUrl=%2Fcontacts").then(function (response) {
+    //    $scope.providers = response.data;
+    //});
     
-    $scope.login = function (url) {
+    $scope.login = function () {
 
 
-        $window.location.href = baseURI + url;
+        $window.location.href = baseURI + "/api/login";
 
     };
        

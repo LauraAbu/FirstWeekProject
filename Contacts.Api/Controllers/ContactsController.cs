@@ -1,12 +1,14 @@
 ﻿using Contacts.Data;
 using Contacts.Data.Interfaces;
 using Contacts.Data.Repository;
+using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace Contacts.Api.Controller
 {
-    [EnableCors("*","*","*", exposedHeaders: "X-Custom-Header")]
+  
+    [Authorize]
     public class ContactsController : ApiController
     {
 
@@ -19,12 +21,13 @@ namespace Contacts.Api.Controller
 
         // GET api/<controller>
         [HttpGet]
-       // [Route("api/contacts")]
+       [Route("api/contacts")]
         public IHttpActionResult Get()
         {
             try
             {
-                return Ok(_contactRepository.GetAll());
+                var req = Request;
+                return Ok(_contactRepository.GetAll().ToList());
             }
             catch (System.Exception ex)
             {
@@ -34,9 +37,9 @@ namespace Contacts.Api.Controller
         }
 
         // GET api/<controller>/5
-        [Authorize]
+        
         [HttpGet]
-        //[Route("api/contacts/{id:int}")]
+        [Route("api/contacts/{id:int}")]
         public IHttpActionResult Get(int id)
 
         {
