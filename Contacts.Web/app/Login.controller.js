@@ -1,5 +1,5 @@
-﻿app.controller("LoginController", function ($scope, $http, $window) {
-    $scope.providers = [];
+﻿app.controller("LoginController", function ($scope, $http, $window, $location ) {
+   // $scope.providers = [];
     var baseURI = "http://localhost:50079";
 
     $scope.searchPattern = "";

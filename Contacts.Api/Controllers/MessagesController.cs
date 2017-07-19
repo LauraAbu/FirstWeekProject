@@ -4,16 +4,19 @@ using Contacts.Data.Repository;
 using System.Web.Http;
 using System.Linq;
 using System.Web.Http.Cors;
+using Contacts.Api.App_Start;
+using Contacts.Api.Areas.Services;
+using System.Threading.Tasks;
 
 namespace Contacts.Api.Controller
 {
-    
+
     [Authorize]
     public class MessagesController : ApiController
     {
 
         private readonly IMessageRepository _messageRepository;
-        
+
 
         public MessagesController()
         {
@@ -47,13 +50,16 @@ namespace Contacts.Api.Controller
         }
 
         // POST api/<controller>
+        [HttpPost]
+        [Route ("api/messages")]
         public IHttpActionResult Post([FromBody] Message value)
         {
             if (null == value || !ModelState.IsValid)
             {
                 return BadRequest();
             }
-
+            messagesservice service = new messagesservice();
+            Task.Run(() => service.SendMessage("", ""));
             _messageRepository.Create(value);
 
             return Ok();
@@ -77,6 +83,8 @@ namespace Contacts.Api.Controller
 
             return Ok();
         }
+
+         
     }
 }
 

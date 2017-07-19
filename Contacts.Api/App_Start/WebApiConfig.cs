@@ -11,6 +11,7 @@ namespace Contacts.Api
         {
 
             // Web API routes
+
             var cors = new EnableCorsAttribute("*", "*", "*") { SupportsCredentials = true }; //cookies is Angular
 
             config.Formatters.JsonFormatter.SerializerSettings.Re‌​ferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -29,5 +30,6 @@ namespace Contacts.Api
             app.UseWebApi(config);
 
         }
+
     }
 }
